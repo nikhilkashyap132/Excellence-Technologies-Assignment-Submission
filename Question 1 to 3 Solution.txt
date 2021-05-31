@@ -1,0 +1,69 @@
+Q1. Ans)
+print("Enter the elements of list:")
+try:
+    MyList = []      
+    while True:
+        MyList.append(int(input()))
+except:
+    print("List is:")
+    print(MyList)
+total=0
+for i in range(0, len(MyList)):
+    total = total + MyList[i]
+print("Sum of all elements in given list: ", total)
+
+
+
+Q2. Ans)
+def MAx(class_list):
+    result=dict()
+    Min=0
+    key=0
+    for i, j in class_list.items():
+      if(Min<int(j)):
+            key=int(i)
+            Min=int(j)  
+    result[i]=j
+    return result
+
+class_list = dict() 
+
+print('Enter name & score separated by ":" ')
+try:
+    while True:
+        data = input()
+        temp = data.split(':') 
+        class_list[temp[0]] = int(temp[1])
+        
+except: 
+    for i, j in class_list.items(): 
+	    print('Name: {}, Score: {}'.format(i,j)) 
+    print("Maximum value is:")
+    print(MAx(class_list))  
+    
+
+
+Q3. Ans)
+def MaxOnes(arr, n):
+	count = 0
+	result = 0
+	for i in range(0, n):
+		if (arr[i] == 0):
+			count = 0
+		else:
+			count+= 1
+			result = max(result, count)	
+	return result
+
+
+print("Enter the binary array:")
+try:
+    arr = []     
+    while True:
+        arr.append(int(input()))         
+except:
+    print(arr)
+n = len(arr)
+print("maximum number of ones are:")
+print(MaxOnes(arr, n))
+
